@@ -7,24 +7,24 @@
  * provided that this copyright notice is retained.      *
  *********************************************************/
 
-/* square.c (Chapter 6, page 102) */
-/* Prints a table of squares using a while statement */
+/* square2.c (Chapter 6, page 110) */
+/* Prints a table of squares using a for statement */
 
 #include <stdio.h>
+#include <limits.h>
 
 int main(void)
 {
-  int i, n;
+  short i, n;
+  
 
+  printf("Max Int: %d\n", INT_MAX);
   printf("This program prints a table of squares.\n");
   printf("Enter number of entries in table: ");
-  scanf("%d", &n);
+  scanf("%hi", &n);
 
-  i = 1;
-  while (i <= n) {
-    printf("%10d%10d\n", i, i * i);
-    i++;
-  }
+  for (i = 1; i <= n; i++)
+    printf("%12i%12i\n", i, i * i);
 
   return 0;
 }
